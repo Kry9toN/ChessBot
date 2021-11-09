@@ -5,6 +5,7 @@ import cv2 #OpenCV
 import board_basics
 from game_state_classes import *
 from tkinter.simpledialog import askstring
+import random
 
 def clear_logs():
     logs_text.delete('1.0', tk.END)
@@ -74,6 +75,7 @@ def start_playing():
             clear_logs()
             add_log("The board :\n" + str(game_state.board) + "\n")
             add_log("\nAll moves :\n" + str(game_state.executed_moves))
+        time.sleep(random.randrange(1,5))
     
 
 window = tk.Tk()
