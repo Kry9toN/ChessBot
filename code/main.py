@@ -63,12 +63,12 @@ def start_playing():
     
     while True:
         window.update()
-        #cv2.imshow('Resized image',game_state.previous_chessboard_image)
-        #add_log("Moves to detect before use engine" + str(game_state.moves_to_detect_before_use_engine))
+        # cv2.imshow('Resized image',game_state.previous_chessboard_image)
+        # add_log("Moves to detect before use engine" + str(game_state.moves_to_detect_before_use_engine))
         if game_state.moves_to_detect_before_use_engine == 0:
-            #add_log("Our turn to play:")
+            add_log("Our turn to play:")
             game_state.play_next_move()
-            #add_log("We are done playing")
+            add_log("We are done playing")
         
         found_move, move = game_state.register_move_if_needed()
         if found_move:
@@ -80,9 +80,9 @@ def start_playing():
 
 window = tk.Tk()
 #window.geometry("300x300")
-window.title("ChessBot by Stanislas Heili")
+window.title("ChessBot ")
 
-label_titre = tk.Label(text="Welcome on my chessbot, hope you will have fun with it",anchor="e", wraplength = 300)#\nThis bot can not work on a game that already started")
+label_titre = tk.Label(text="Welcome on my chessbot, hope you will have fun with it \n Moded by Kry9toN",anchor="e", wraplength = 300)#\nThis bot can not work on a game that already started")
 label_titre.grid(column = 0,row = 0)
 
 

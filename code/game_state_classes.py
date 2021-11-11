@@ -27,7 +27,7 @@ class Game_state:
         self.expected_move_to_detect = "" #This variable stores the move we should see next, if we don't see the right one in the next iteration, we wait and try again. This solves the slow transition problem: for instance, starting with e2e4, the screenshot can happen when the pawn is on e3, that is a possible position. We always have to double check that the move is done.
         self.previous_chessboard_image = [] #Storing the chessboard image from previous iteration
         self.executed_moves = [] #Store the move detected on san format
-        self.engine = chess.uci.popen_engine(r'C:\Users\KryPtoN\Desktop\chessbot_python\stockfish.exe')#The engine used is stockfish. It requires to have the command stockfish working on the shell
+        self.engine = chess.uci.popen_engine(r'E:\chessbot_python\stockfish.exe')#The engine used is stockfish. It requires to have the command stockfish working on the shell
         self.board = chess.Board() #This object comes from the "chess" package, the moves are stored inside it (and it has other cool features such as showing all the "legal moves")
         self.board_position_on_screen = []
         self.sct = mss.mss()
@@ -101,15 +101,15 @@ class Game_state:
         return valid_move_string
 
     def register_move_if_needed(self):
-        #cv2.imshow('old_image',self.previous_chessboard_image)
-        #k = cv2.waitKey(10000)                
+        # cv2.imshow('old_image',self.previous_chessboard_image)
+        # k = cv2.waitKey(10000)                
         new_board = chessboard_detection.get_chessboard(self)
         potential_starts, potential_arrivals = get_potential_moves(self.previous_chessboard_image,new_board,self.we_play_white)
         valid_move_string1 = self.get_valid_move(potential_starts,potential_arrivals,new_board)
         print("Valid move string 1:" + valid_move_string1)
 
         if len(valid_move_string1) > 0:
-            time.sleep(0.1)    
+            time.sleep(0.3)    
             'Check that we were not in the middle of a move animation'
             new_board = chessboard_detection.get_chessboard(self)
             potential_starts, potential_arrivals = get_potential_moves(self.previous_chessboard_image,new_board,self.we_play_white)
