@@ -29,7 +29,7 @@ class Game_state:
         self.previous_chessboard_image = [] #Storing the chessboard image from previous iteration
         self.executed_moves = [] #Store the move detected on san format
         if platform.system() in 'Windows':
-            self.engine = chess.uci.popen_engine(r'E:\chessbot_python\stockfish.exe') #The engine used is stockfish. It requires to have the command stockfish working on the shell
+            self.engine = chess.uci.popen_engine(r'E:\ChessBot\bin\stockfish.exe') #The engine used is stockfish. It requires to have the command stockfish working on the shell
         else :
             self.engine = chess.uci.popen_engine('bin/stockfish') #The engine used is stockfish. It requires to have the command stockfish working on the shell
         self.board = chess.Board() #This object comes from the "chess" package, the moves are stored inside it (and it has other cool features such as showing all the "legal moves")
