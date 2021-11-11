@@ -18,7 +18,8 @@ This bot has been developped on iOS, but all the librairies it is using are comp
 This bot uses stockfish to calculate the next best move. Here is the procedure to make it work :
 
 * Download stockfish for your OS (https://stockfishchess.org/download/), the macOS stockfish I used is already commited.
-* Add it to your path with : ```export PATH=$PATH:$(pwd)```
+* Place binary on folder bin
+* Add it to your path with : ```export PATH=$PATH:$(pwd)``` If you user Windows just edit on this [line](https://github.com/Kry9toN/ChessBot/blob/cf07d9b4612258ec0590539ba9f4fbd2d1ef52d0/code/game_state_classes.py#L30)
 * Test that stockfish is working well by running the command ```stockfish``` in your terminal. It should output something like this: ```Stockfish 120218 64 by T. Romstad, M. Costalba, J. Kiiski, G. Linscott```
 
 #### Python:
